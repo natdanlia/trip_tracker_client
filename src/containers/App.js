@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import About from '../components/About';
 import Form from '../components/Form';
+import Profile from '../components/Profile'
+import NavBar from './NavBar'
 import TripContainer from './TripContainer'
 import TripDetail from '../components/TripDetail'
 
@@ -38,6 +40,7 @@ class App extends Component {
     return (
       <Router>
         <div>
+          <NavBar />
           <Switch>
             <Route  path={`/trips/:id`} render={props => {
                 let tripId = parseInt(props.match.params.id)
@@ -45,6 +48,7 @@ class App extends Component {
             <Route  path='/trips' render={(routerProps) =>  <TripContainer  trip ={this.state.selectedTrip} clickHandler={this.onSelectTrip} {...routerProps} trips={this.state.trips}/>} />
 
             <Route path='/about' component={About} />
+            <Route path='/profile' component={Profile} />
           </Switch>
          </div>
       </Router>

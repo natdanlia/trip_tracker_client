@@ -1,18 +1,28 @@
 import React from 'react'
-import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom';
 
-const TripsCard = ({trips}) => {
+const TripsCard = ({trips, clickHandler}) => {
+
     const renderTrips = trips.map((trip,idx) => {
       return (
-        <div key={idx}>
+        <Link to={`/trips/${trip.id}`}>
+        <div data-trip-id={trip.id} onClick={clickHandler} key={idx}>
           <h1>{trip.city}</h1>
           <img src={`${trip.pictures[0].img_url}`} />
-        </div> )}
+        </div>
+        </Link>
+
+      )}
+
+
     )
   return (
+
     <div>
       {renderTrips}
     </div>
+
+
   )
 }
 

@@ -1,14 +1,13 @@
 import React from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import TripsCard from '../components/TripsCard'
-import TripDetail from '../components/TripDetail'
 
 
-const TripContainer =({match,trips}) => (
+
+const TripContainer =({match,trips,clickHandler, trip}) => (
   <div>
-    <Route exact path={match.url} render={ () => <TripsCard trips={trips} /> } />
-    <Route path={`${match.url}/:tripsId`} render={routerProps => <TripDetail {...routerProps} trips={trips} /> } />
-
+    
+      <Route exact path={match.url} render={ () => <TripsCard clickHandler={clickHandler} trips={trips} trip={trip}/> } />
   </div>
 
   )

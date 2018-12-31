@@ -6,6 +6,7 @@ import Profile from '../components/Profile'
 import NavBar from './NavBar'
 import TripContainer from './TripContainer'
 import TripDetail from '../components/TripDetail'
+import 'semantic-ui-css/semantic.min.css'
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -45,7 +46,7 @@ class App extends Component {
             <Route  path={`/trips/:id`} render={props => {
                 let tripId = parseInt(props.match.params.id)
                 return <TripDetail trip={this.state.trips.find(p => p.id === tripId)} /> } } />
-            <Route  path='/trips' render={(routerProps) =>  <TripContainer  trip ={this.state.selectedTrip} clickHandler={this.onSelectTrip} {...routerProps} trips={this.state.trips}/>} />
+            <Route  path='/trips' render={(props) =>  <TripContainer  trip ={this.state.selectedTrip} clickHandler={this.onSelectTrip} {...props} trips={this.state.trips}/>} />
 
             <Route path='/about' component={About} />
             <Route path='/profile' component={Profile} />

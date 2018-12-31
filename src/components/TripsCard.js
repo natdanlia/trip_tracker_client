@@ -8,7 +8,7 @@ const TripsCard = ({trips, clickHandler}) => {
         <Link to={`/trips/${trip.id}`}>
         <div data-trip-id={trip.id} onClick={clickHandler} key={idx}>
           <h1>{trip.city}</h1>
-          <img src={`${trip.pictures[0].img_url}`} />
+
         </div>
         </Link>
 
@@ -27,3 +27,6 @@ const TripsCard = ({trips, clickHandler}) => {
 }
 
 export default TripsCard
+
+
+// <img src={`${trip.pictures[0].img_url}`} />

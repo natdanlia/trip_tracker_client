@@ -4,26 +4,42 @@ import { NavLink } from 'react-router-dom';
 
 const NavBar = (props) => {
   return (
-    <div style={{ borderBottom: '2px solid black', paddingBottom: '10px', marginBottom: '12px' }}>
+
+
+
+    <div class="ui inverted segment">
+      <div class="ui inverted secondary pointing menu">
       <NavLink
-        style={{ marginRight: '10px' }}
+        className="item"
+        to="/trips"
+      >
+        Trip Tracker
+      </NavLink>
+      <NavLink
+        className="item"
         to="/about"
       >
         About
       </NavLink>
       <NavLink
-        style={{ marginRight: '10px' }}
+        className="item"
         to="/trips"
       >
         Trips
       </NavLink>
+      <div class="right menu">
       <NavLink
-        style={{ marginRight: '10px' }}
+        className="item"
         to="/profile"
       >
         profile
       </NavLink>
+      </div>
+      </div>
     </div>
+
+
+
   )
 }
 

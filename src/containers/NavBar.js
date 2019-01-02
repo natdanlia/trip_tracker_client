@@ -7,13 +7,15 @@ const NavBar = (props) => {
 
 
 
-    <div class="ui inverted segment">
-      <div class="ui inverted secondary pointing menu">
+    <div class="ui olive inverted massive menu">
+
+
+
       <NavLink
         className="item"
         to="/trips"
       >
-        Trip Tracker
+        <img src="https://steemitimages.com/640x0/https://cdn.utopian.io/posts/c8bdc11acc6d4b27334bf99e7abec03558a0TTVert.png"/>
       </NavLink>
       <NavLink
         className="item"
@@ -35,7 +37,7 @@ const NavBar = (props) => {
         profile
       </NavLink>
       </div>
-      </div>
+
     </div>
 
 

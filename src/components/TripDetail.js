@@ -3,10 +3,10 @@ import { Link, Route } from 'react-router-dom';
 import Form from './Form'
 
 
-const TripDetail = ({trip,editClick,editState, details, handleAllChange, updateState, handleSubmit}) => {
+const TripDetail = ({trip,editClick,editState, details, handleAllChange, updateState, deleteClick, handleSubmit}) => {
 
 
-  trip && updateState(trip)
+
 
   return (
     <div>
@@ -19,10 +19,12 @@ const TripDetail = ({trip,editClick,editState, details, handleAllChange, updateS
               <p>Staying At {trip.staying_at}</p>
               <p>Cost for the Trip{trip.cost}</p>
               <p>Trip Type: {trip.travelling_type}</p>
-              <button onClick={editClick}>Edit Trip</button>
+              <button  onClick={()=>editClick(trip)}>Edit Trip</button>
+              <Link to='/trips'> 
+                <button  onClick={()=>deleteClick(trip)}>Delete Trip</button>
+              </Link>
 
-
-              { editState ? <Form city={details.city} country={details.country} cost={details.cost} note={details.note}    handleAllChange={handleAllChange} handleSubmit={handleSubmit}/> : null}
+              { editState ? <Form city={details.city} country={details.country} cost={details.cost} note={details.note} staying={details.staying_at} start={details.start_date} end={details.end_date} travelling={details.travelling_type} handleAllChange={handleAllChange} handleSubmit={handleSubmit}/> : null}
 
 
               {trip.pictures.map(pic => <img src={pic.img_url} />)}
@@ -30,6 +32,8 @@ const TripDetail = ({trip,editClick,editState, details, handleAllChange, updateS
 
 
           </div> : console.log("fetching") }
+
+
     </div>
   )
 }

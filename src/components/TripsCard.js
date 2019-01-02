@@ -24,7 +24,7 @@ const TripsCard = ({trips, clickHandler}) => {
     )
   return (
 
-    <div className="ui four column grid" >
+    <div className="ui cards four column grid" >
       {renderTrips}
     </div>
 

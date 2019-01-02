@@ -29,7 +29,7 @@ const NavBar = (props) => {
       >
         Trips
       </NavLink>
-      <div class="right menu">
+      <div className="right menu">
       <NavLink
         className="item"
         to="/profile"

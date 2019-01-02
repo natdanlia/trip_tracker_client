@@ -7,6 +7,7 @@ import NavBar from './NavBar'
 import TripContainer from './TripContainer'
 import TripDetail from '../components/TripDetail'
 import 'semantic-ui-css/semantic.min.css'
+import '../index.css'
 
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
@@ -88,8 +89,8 @@ class App extends Component {
   handleEditSubmit = (event) => {
     event.preventDefault()
     event.persist()
-    console.log(event)
-    let tripId = event.target.baseURI.slice(-1)
+    console.log("NIgga")
+    let tripId = event.target.baseURI.split("/").slice(-1).toString()
     console.log(tripId)
 
 
@@ -117,7 +118,8 @@ class App extends Component {
       let filter_data = [...filterd, data]
       debugger;
       this.setState({
-        trips: filter_data
+        trips: filter_data,
+        tripEdit: false
       })
     })
 
@@ -176,22 +178,4 @@ class App extends Component {
   }
 }
 
-// .then(res => res.json()).then( data => {
-//   let filterd = this.state.trips.filter(t => t.id !== data.id)
-//   let filter_data = [...filterd, data]
-//   debugger;
-//   this.setState({
-//     trips: filter_data
-//   })
-// })
-
-// user_id: 1,
-// city: data.city,
-// country: data.country,
-// cost: data.cost,
-// start_date: data.start_date,
-// end_date: data.end_date,
-// staying_at: data.staying_at,
-// travelling_type: data.travelling_type,
-// note: data.note,
 export default App;

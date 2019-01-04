@@ -17,3 +17,37 @@ code {
 .ui.card>.image>img {
   height: 233px !important;
 }
+
+.container {
+  text-align: center;
+}
+
+.ui.form {
+  margin: 75px auto;
+  width: 50%;
+}
+
+.ui.grid {
+  margin: 20px;
+}
+
+.ui.column.grid {
+  margin: 50px auto !important;
+}
+.ui.four.cards{
+  margin: 50px auto !important;
+  width: 90%;
+}
+
+#cont {
+  margin: 50px;
+  text-align: center;
+
+}
+
+
+#tnote {
+  margin: 20px 200px;
+  padding: 20px 150px;
+  text-align: center;
+}

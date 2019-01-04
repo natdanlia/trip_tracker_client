@@ -5,6 +5,7 @@ class Form extends React.Component {
   render () {
     return(
       <form className="ui form" onSubmit={event => this.props.handleSubmit(event)}>
+        <h1>Add Trip</h1>
         <div className="field">
           <div className="two fields">
             <div className="field">

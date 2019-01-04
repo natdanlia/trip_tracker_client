@@ -89,7 +89,7 @@ class App extends Component {
   handleEditSubmit = (event) => {
     event.preventDefault()
     event.persist()
-    console.log("NIgga")
+
     let tripId = event.target.baseURI.split("/").slice(-1).toString()
     console.log(tripId)
 
@@ -119,7 +119,15 @@ class App extends Component {
       debugger;
       this.setState({
         trips: filter_data,
-        tripEdit: false
+        tripEdit: false,
+        city: '',
+        country: '',
+        cost: '',
+        start_date: '',
+        end_date: '',
+        staying_at: '',
+        travelling_type: '',
+        note: ''
       })
     })
 

@@ -64,7 +64,7 @@ class Form extends React.Component {
 
     <div class="field">
       <label>Note</label>
-      <textarea type="text" name="note" value={this.props.note} onChange={this.props.handleAllChange}></textarea>
+      <input type="text" name="note" value={this.props.note} onChange={this.props.handleAllChange}></input>
     </div>
 
 

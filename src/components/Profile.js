@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 class Profile extends React.Component {
   constructor(){
@@ -26,7 +26,7 @@ class Profile extends React.Component {
         <h3>User Name: {this.state.profile[0].user_name}</h3>
 
           <h2>Contact Info</h2>
-        
+
             <h3>Email</h3>
           <p>{this.state.profile[0].email}</p>
           <h3>Phone</h3>

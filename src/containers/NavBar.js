@@ -7,7 +7,7 @@ const NavBar = (props) => {
 
 
 
-    <div class="ui olive inverted massive menu">
+    <div className="ui olive inverted massive menu">
 
 
 

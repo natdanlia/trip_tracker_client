@@ -1,16 +1,14 @@
 import React from 'react'
-import { Link, Route } from 'react-router-dom';
+import { Link, Route } from 'react-router-dom'
 import Form from './Form'
 
 
-const TripDetail = ({trip,editClick,editState, details, handleAllChange, updateState, deleteClick, handleSubmit}) => {
-
-
-
+const TripDetail = ({props,trip,editClick,editState, details, handleAllChange, updateState, deleteClick, handleSubmit}) => {
 
   return (
-    <div>
-        { trip ?
+     trip ? (
+
+       <div>
           <div id="cont">
               <h1> {trip.city} </h1>
               <h2>{trip.country}</h2>
@@ -28,30 +26,24 @@ const TripDetail = ({trip,editClick,editState, details, handleAllChange, updateS
 
 
 
-              <div class="ui four column grid">
+              <div className="ui four column grid">
 
-                      {trip.pictures.map(pic => (
-                        <div class="four wide column">
+                      {trip.pictures.map((pic,idx) => (
+                        <div key={idx} className="four wide column">
                           <div class="ui fluid card">
-                            <div class="image">
+                            <div className="image">
                         <img src={pic.img_url} />
                         </div>
                       </div>
                     </div>
-
-                      )
-
-                      )}
-
-
+                    )
+                  )}
               </div>
+            </div>
+
+    </div>  ) : null
 
 
-
-          </div> : console.log("fetching") }
-
-
-    </div>
   )
 }
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+
 import About from '../components/About';
 import Form from '../components/Form';
 import Profile from '../components/Profile'
@@ -9,7 +9,7 @@ import TripDetail from '../components/TripDetail'
 import 'semantic-ui-css/semantic.min.css'
 import '../index.css'
 
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 
 class App extends Component {
@@ -35,7 +35,8 @@ class App extends Component {
   componentDidMount(){
     fetch('http://localhost:3000/destinations')
     .then(res => res.json())
-    .then(data => this.setState({trips: data}))
+    // .then(data => console.log(data))
+    .then(data => this.setState({trips: data}) )
   }
 
   onSelectTrip = (event) => {
@@ -81,8 +82,17 @@ class App extends Component {
         note: this.state.note
       })
       }
-    ).then(res => res.json()).then(data => this.setState({
-      trips: [...this.state.trips, data]
+    ).then(res => res.json())
+    .then(data => this.setState({
+      trips: [...this.state.trips, data],
+      city: '',
+      country: '',
+      cost: '',
+      start_date: '',
+      end_date: '',
+      staying_at: '',
+      travelling_type: '',
+      note: '',
     }))
   }
 
@@ -165,6 +175,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state)
     return (
       <Router>
         <div>
